@@ -1,5 +1,5 @@
 import Container from "@/components/Container";
-import { useEffect, useRef, Suspense, useState } from "react";
+import React, { useEffect, useRef, Suspense, useState } from "react";
 import styles from "@/styles/Home.module.css";
 import { Button } from "@/components/ui/button";
 import {
@@ -28,9 +28,9 @@ import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
 
 const aboutStats = [
-  { label: "Years of experience", value: "3+" },
-  { label: "Technologies mastered", value: "5+" },
-  { label: "Companies worked with", value: "15+" },
+  { label: "Hours Spent", value: "3000+" },
+  { label: "Projects Completed", value: "5+" },
+  { label: "Services Offered", value: "15+" },
 ];
 
 const projects = [
@@ -68,33 +68,33 @@ const projects = [
 
 const services = [
   {
-    service: "Frontend Development",
+    service: "Logo Design",
     description:
-      "Creating stellar user interfaces and web experiences using the latest technologies.",
+      "Creating stellar logos for your personal or professional needs",
     icon: Code2,
   },
   {
-    service: "UX Design",
+    service: "Brand Identity Design",
     description:
-      "Building intuitive, user-centric designs that drive engagement and conversion.",
+      "Building style guides that take your brand to the next level",
     icon: Frame,
   },
   {
-    service: "SEO Optimization",
+    service: "Pitch Deck and Presentation Design",
     description:
-      "Enhancing your website's visibility in search engines for increased organic traffic.",
+      "Designing jaw-dropping pitch decks and presentations that impress your investors",
     icon: SearchCheck,
   },
   {
-    service: "Responsive Design",
+    service: "Signage Design",
     description:
-      "Designing websites that look and perform equally well on all devices and screen sizes.",
+      "Designing captivating signs and display graphics for your brand",
     icon: MonitorSmartphone,
   },
   {
-    service: "Backend Development",
+    service: "Visual Designs",
     description:
-      "Developing robust, scalable server-side logic for a wide range of web applications.",
+      "Designing catchy visual design to improve your brand reach",
     icon: Eye,
   },
 ];
@@ -103,7 +103,7 @@ export default function Home() {
   const refScrollContainer = useRef(null);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
-  const [current, setCurrent] = useState<number>(0);
+  const [current, setCurrent] = useState<number>(15);
   const [count, setCount] = useState<number>(0);
 
   // handle scroll
@@ -152,10 +152,10 @@ export default function Home() {
     if (!carouselApi) return;
 
     setCount(carouselApi.scrollSnapList().length);
-    setCurrent(carouselApi.selectedScrollSnap() + 1);
+    setCurrent(carouselApi.selectedScrollSnap() + 4);
 
     carouselApi.on("select", () => {
-      setCurrent(carouselApi.selectedScrollSnap() + 1);
+      setCurrent(carouselApi.selectedScrollSnap() + 4);
     });
   }, [carouselApi]);
 
@@ -180,24 +180,24 @@ export default function Home() {
         {/* Intro */}
         <section
           id="home"
-          data-scroll-section
+          data-scroll-section=""
           className="mt-40 flex w-full flex-col items-center xl:mt-0 xl:min-h-screen xl:flex-row xl:justify-between"
         >
           <div className={styles.intro}>
             <div
-              data-scroll
+              data-scroll=""
               data-scroll-direction="horizontal"
               data-scroll-speed=".09"
               className="flex flex-row items-center space-x-1.5"
             >
-              <span className={styles.pill}>next.js</span>
-              <span className={styles.pill}>tailwindcss</span>
-              <span className={styles.pill}>typescript</span>
+              <span className={styles.pill}>posters</span>
+              <span className={styles.pill}>logos</span>
+              <span className={styles.pill}>style-guides</span>
             </div>
             <div>
               <h1
-                data-scroll
-                data-scroll-enable-touch-speed
+                data-scroll=""
+                data-scroll-enable-touch-speed=""
                 data-scroll-speed=".06"
                 data-scroll-direction="horizontal"
               >
@@ -205,27 +205,26 @@ export default function Home() {
                   Hello, I&apos;m
                   <br />
                 </span>
-                <span className="clash-grotesk text-gradient text-6xl 2xl:text-8xl">
-                  WendoJ.
+                <span className={"text-xl font-bold clash-grotesk text-gradient  2xl:text-8xl"}>
+                  Antony K.
                 </span>
               </h1>
               <p
-                data-scroll
-                data-scroll-enable-touch-speed
+                data-scroll=""
+                data-scroll-enable-touch-speed=""
                 data-scroll-speed=".06"
                 className="mt-1 max-w-lg tracking-tight text-muted-foreground 2xl:text-xl"
               >
-                An experienced full-stack website developer with a passion for
-                crafting unique digital experiences.
+                Passionate Graphic Designer that lives to design
               </p>
             </div>
             <span
-              data-scroll
-              data-scroll-enable-touch-speed
+              data-scroll=""
+              data-scroll-enable-touch-speed=""
               data-scroll-speed=".06"
               className="flex flex-row items-center space-x-1.5 pt-6"
             >
-              <Link href="mailto:wendoj@proton.me" passHref>
+              <Link href="mailto:iknantony@gmail.com" passHref>
                 <Button>
                   Get in touch <ChevronRight className="ml-1 h-4 w-4" />
                 </Button>
@@ -249,7 +248,7 @@ export default function Home() {
             </div>
           </div>
           <div
-            data-scroll
+            data-scroll=""
             data-scroll-speed="-.01"
             id={styles["canvas-container"]}
             className="mt-14 h-full w-full xl:mt-0"
@@ -261,27 +260,23 @@ export default function Home() {
         </section>
 
         {/* About */}
-        <section id="about" data-scroll-section>
+        <section id="about" data-scroll-section="">
           <div
-            data-scroll
+            data-scroll=""
             data-scroll-speed=".4"
             data-scroll-position="top"
-            className="my-14 flex max-w-6xl flex-col justify-start space-y-10"
+            className="my-14 top-1 flex max-w-6xl flex-col justify-start space-y-10"
           >
             <h2 className="py-16  pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[40px]">
-              I&apos;m an experienced full-stack developer proficient in{" "}
-              <Link
-                href="https://create.t3.gg/"
-                target="_blank"
-                className="underline"
-              >
-                TypeScript, Tailwind, and Next.js
-              </Link>{" "}
-              since 2021. My experience spans from startups to mid-sized
-              companies, where I&apos;ve been instrumental in the entire product
-              design process; from ideation and wireframing, through
-              prototyping, to the delivery of the final product, all while
-              efficiently collaborating with cross-functional teams.
+              I&#39;m a passionate graphic designer with a keen eye for crafting
+              impactful brand identities. Since 2020, I&#39;ve honed my skills
+              in logo design, typography, color theory, and more to create
+              cohesive and memorable brand experiences. My expertise encompasses
+              the entire brand identity spectrum, from concept development and
+              visual exploration to final execution and style guide creation. I
+              thrive on collaborating closely with clients to understand their
+              unique vision and translate it into visually stunning brand
+              stories.
             </h2>
             <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
               {aboutStats.map((stat) => (
@@ -302,7 +297,7 @@ export default function Home() {
         </section>
 
         {/* Projects */}
-        <section id="projects" data-scroll-section>
+        <section id="projects" data-scroll-section="">
           {/* Gradient */}
           <div className="relative isolate -z-10">
             <div
@@ -318,21 +313,21 @@ export default function Home() {
               />
             </div>
           </div>
-          <div data-scroll data-scroll-speed=".4" className="my-64">
+          <div data-scroll="" data-scroll-speed=".4" className="my-64">
             <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
               ✨ Projects
             </span>
-            <h2 className="mt-3 text-4xl font-semibold tracking-tight tracking-tighter xl:text-6xl">
-              Streamlined digital experiences.
+            <h2 className="mt-3 text-4xl font-semibold tracking-tight xl:text-6xl">
+              ✨ Concise Designs.
             </h2>
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              I&apos;ve worked on a variety of projects, from small websites to
-              large-scale web applications. Here are some of my favorites:
+              I&apos;ve worked on a variety of projects, from basic logos to
+              large-scale brand identities. Here are some of my favorites:
             </p>
 
             {/* Carousel */}
             <div className="mt-14">
-              <Carousel setApi={setCarouselApi} className="w-full">
+              <Carousel setApi={setCarouselApi}>
                 <CarouselContent>
                   {projects.map((project) => (
                     <CarouselItem key={project.title} className="md:basis-1/2">
@@ -371,23 +366,17 @@ export default function Home() {
                 <CarouselPrevious />
                 <CarouselNext />
               </Carousel>
-              <div className="py-2 text-center text-sm text-muted-foreground">
-                <span className="font-semibold">
-                  {current} / {count}
-                </span>{" "}
-                projects
-              </div>
             </div>
           </div>
         </section>
 
         {/* Services */}
-        <section id="services" data-scroll-section>
+        <section id="services" data-scroll-section="">
           <div
-            data-scroll
+            data-scroll=""
             data-scroll-speed=".4"
             data-scroll-position="top"
-            className="my-24 flex flex-col justify-start space-y-10"
+            className=" flex flex-col justify-start space-y-10"
           >
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -431,9 +420,9 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section id="contact" data-scroll-section className="my-64">
+        <section id="contact" data-scroll-section="" className="my-64">
           <div
-            data-scroll
+            data-scroll=""
             data-scroll-speed=".4"
             data-scroll-position="top"
             className="flex flex-col items-center justify-center rounded-lg bg-gradient-to-br from-primary/[6.5%] to-white/5 px-8 py-16 text-center xl:py-24"
@@ -446,7 +435,7 @@ export default function Home() {
               I&apos;m currently available for freelance work and open to
               discussing new projects.
             </p>
-            <Link href="mailto:wendoj@proton.me" passHref>
+            <Link href="mailto:iknantony@gmail.com" passHref>
               <Button className="mt-6">Get in touch</Button>
             </Link>
           </div>
@@ -460,58 +449,57 @@ function Gradient() {
   return (
     <>
       {/* Upper gradient */}
-      <div className="absolute -top-40 right-0 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
-        <svg
-          className="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
-          viewBox="0 0 1155 678"
-        >
-          <path
-            fill="url(#45de2b6b-92d5-4d68-a6a0-9b9b2abad533)"
-            fillOpacity=".1"
-            d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
-          />
-          <defs>
-            <linearGradient
-              id="45de2b6b-92d5-4d68-a6a0-9b9b2abad533"
-              x1="1155.49"
-              x2="-78.208"
-              y1=".177"
-              y2="474.645"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#7980fe" />
-              <stop offset={1} stopColor="#f0fff7" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
+        <div className="absolute -top-40 right-0 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+               viewBox="0 0 700 700" width="700" height="700" opacity="1">
+            <defs>
+              <linearGradient gradientTransform="rotate(215, 0.5, 0.5)" x1="50%" y1="0%" x2="50%" y2="100%"
+                              id="ffflux-gradient">
+                <stop stopColor="hsl(0, 0%, 0%)" stopOpacity="1" offset="0%"></stop>
+                <stop stopColor="hsl(37, 91%, 55%)" stopOpacity="1" offset="100%"></stop>
+              </linearGradient>
+              <filter id="ffflux-filter" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox"
+                      primitiveUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.007 0.004" numOctaves="1" seed="2"
+                              stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%"
+                              result="turbulence"></feTurbulence>
+                <feGaussianBlur stdDeviation="21 50" x="0%" y="0%" width="100%" height="100%" in="turbulence"
+                                edgeMode="duplicate" result="blur"></feGaussianBlur>
+                <feBlend mode="color-burn" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" in2="blur"
+                         result="blend"></feBlend>
 
-      {/* Lower gradient */}
-      <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
-        <svg
-          className="relative left-[calc(50%+3rem)] h-[21.1875rem] max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[42.375rem]"
-          viewBox="0 0 1155 678"
-        >
-          <path
-            fill="url(#ecb5b0c9-546c-4772-8c71-4d3f06d544bc)"
-            fillOpacity=".1"
-            d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
-          />
-          <defs>
-            <linearGradient
-              id="ecb5b0c9-546c-4772-8c71-4d3f06d544bc"
-              x1="1155.49"
-              x2="-78.208"
-              y1=".177"
-              y2="474.645"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#9A70FF" />
-              <stop offset={1} stopColor="#838aff" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
+              </filter>
+            </defs>
+            <rect width="700" height="700" fill="url(#ffflux-gradient)" filter="url(#ffflux-filter)"></rect>
+          </svg>
+        </div>
+
+        {/* Lower gradient */}
+        <div
+            className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+               viewBox="0 0 700 700" width="700" height="700" opacity="1">
+            <defs>
+              <linearGradient gradientTransform="rotate(215, 0.5, 0.5)" x1="50%" y1="0%" x2="50%" y2="100%"
+                              id="ffflux-gradient">
+                <stop stopColor="hsl(0, 0%, 0%)" stopOpacity="1" offset="0%"></stop>
+                <stop stopColor="hsl(37, 91%, 55%)" stopOpacity="1" offset="100%"></stop>
+              </linearGradient>
+              <filter id="ffflux-filter" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox"
+                      primitiveUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.007 0.004" numOctaves="1" seed="2"
+                              stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%"
+                              result="turbulence"></feTurbulence>
+                <feGaussianBlur stdDeviation="21 50" x="0%" y="0%" width="100%" height="100%" in="turbulence"
+                                edgeMode="duplicate" result="blur"></feGaussianBlur>
+                <feBlend mode="color-burn" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" in2="blur"
+                         result="blend"></feBlend>
+
+              </filter>
+            </defs>
+            <rect width="700" height="700" fill="url(#ffflux-gradient)" filter="url(#ffflux-filter)"></rect>
+          </svg>
+        </div>
     </>
   );
 }

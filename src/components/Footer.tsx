@@ -19,6 +19,7 @@ export default function Footer() {
         }),
       );
     }, 1000);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -29,28 +30,28 @@ export default function Footer() {
           <p className="text-xs text-muted-foreground">
             Made with ❤️ by{" "}
             <Link
-              href="https://github.com/wendoj"
+              href="https://github.com/antrxc"
               target="_blank"
               passHref
               className="text-foreground transition hover:text-primary"
             >
-              wendoj
+              antrxc
             </Link>
           </p>
           <hr className="hidden h-6 border-l border-muted md:flex" />
-          <span className="flex hidden flex-row items-center space-x-2 md:flex">
+          <span className="flex hidden flex-row items-npm center space-x-2 md:flex">
             <p className="text-xs text-muted-foreground">Local time:</p>
             <p className="text-sm font-semibold">{time} UTC+1</p>
           </span>
         </span>
         <Link
-          href="mailto:wendoj@proton.me"
+          href="mailto:iknantony@gmail.com"
           passHref
           className="text-xs text-muted-foreground hover:text-foreground"
         >
           <Button variant={"outline"}>
             <MailIcon className="h-4 w-4 md:mr-2" />
-            <span className="hidden md:flex">wendoj@proton.me</span>
+            <span className="hidden md:flex">iknantony@gmail.com</span>
           </Button>
         </Link>
       </div>

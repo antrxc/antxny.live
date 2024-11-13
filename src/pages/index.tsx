@@ -47,12 +47,6 @@ const projects = [
     href: "#",
   },
   {
-    title: "TranslateBot",
-    description: "Powerful Multilingual Translation Bot for Discord",
-    image: "/assets/translate_bot.webm",
-    href: "https://translatebot.app/",
-  },
-  {
     title: "Wrona",
     description: "Robotics-focused technology company",
     image: "/assets/wrona.jpeg",
